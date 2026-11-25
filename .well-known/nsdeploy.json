@@ -1,0 +1,18 @@
+{
+  "exports": [
+    {
+      "aliases": [
+        "antar_pasar",
+        "koordinator_antar"
+      ],
+      "front_man": "koordinator_antar",
+      "network": "antar_pasar",
+      "url": "antar_pasar"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  },
+  "protocol": "nsdeploy-link/v1"
+}

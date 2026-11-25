@@ -1,0 +1,76 @@
+{
+  "actions": {
+    "agentTools": [
+      "get_tarif"
+    ],
+    "bridge": "./bridge/action-bridge.html",
+    "module": "./site-actions.js",
+    "version": 1
+  },
+  "agent_mcp": {
+    "available": false,
+    "front_man": "koordinator_antar",
+    "network": "antar_pasar",
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "allowed_peers": [],
+  "brand": "Antar Pasar",
+  "deployment": {
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "mode": "static",
+    "public_mcp_facade": false,
+    "self_contained_runtime": true
+  },
+  "linking": {
+    "exports": [
+      {
+        "aliases": [
+          "antar_pasar",
+          "koordinator_antar"
+        ],
+        "front_man": "koordinator_antar",
+        "network": "antar_pasar",
+        "url": "antar_pasar"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    },
+    "protocol": "nsdeploy-link/v1"
+  },
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "byok_router": "https://api.otari.ai/api/v1",
+    "mock": false
+  },
+  "networks": [
+    {
+      "description": "Cek ongkir dan slot jam antar belanjaan Pasar Pagi di Cilacap.",
+      "front_man": "koordinator_antar",
+      "hocon": "./antar_pasar.network.json",
+      "name": "antar_pasar",
+      "sample_queries": [
+        "Berapa ongkir antar 5 km?",
+        "Slot antar jam berapa saja yang masih tersedia?",
+        "Jarak 5 km, jam 18:00 masih bisa diantar?",
+        "Saya di 20 km dari pasar, bisa diantar?",
+        "Jam 12:00 masih bisa antar?"
+      ],
+      "tags": [
+        "agentified-website"
+      ]
+    }
+  ],
+  "peer_policy": {
+    "deny_origins": [],
+    "mode": "closed",
+    "note": "Local agents and page-local actions only. No partner sites yet."
+  },
+  "theme": {
+    "primary": "#a63220"
+  }
+}

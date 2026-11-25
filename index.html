@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antar Pasar — Kurir Pasar Cilacap</title>
+  <meta name="description" content="Antar Pasar: kurir belanjaan Pasar Pagi Cilacap. Cek ongkir per jarak dan slot jam antar.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+  <script type="module" src="site.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Kurir pasar &middot; Cilacap, Jawa Tengah</p>
+      <h1>Antar Pasar</h1>
+      <p class="tagline">Belanjaan dari Pasar Pagi diantar ke rumah Anda. Cek ongkir
+        berdasarkan jarak dan pilih slot jam antar.</p>
+      <p class="demo-banner" id="catatan-antar" role="note">Demo: tarif di halaman ini tarif contoh,
+        tidak ada pengiriman sungguhan, dan tidak ada pembayaran.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="tarif-judul">
+      <h2 id="tarif-judul">Tarif ongkir</h2>
+      <p class="muted" id="tarif-info">Memuat tarif&hellip;</p>
+      <table class="tarif">
+        <thead>
+          <tr><th>Jarak dari pasar</th><th>Ongkir</th></tr>
+        </thead>
+        <tbody id="tarif-body"></tbody>
+      </table>
+      <p class="muted" id="jam-operasional"></p>
+    </section>
+
+    <section aria-labelledby="cek-judul" class="card">
+      <h2 id="cek-judul">Cek ongkir</h2>
+      <form id="cek-form">
+        <label>Jarak dari pasar (km)
+          <input type="number" name="jarak" id="jarak" min="0" max="15" step="0.1" placeholder="mis. 5" required>
+        </label>
+        <label>Jam antar
+          <select name="jam" id="jam">
+            <option value="">Pilih jam (opsional)</option>
+            <option value="07:00">07:00</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+          </select>
+        </label>
+        <button type="submit" id="cek-btn">Cek ongkir</button>
+      </form>
+      <div id="hasil" class="hasil" hidden tabindex="-1">
+        <p id="hasil-teks" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="slot-judul" class="card">
+      <h2 id="slot-judul">Slot jam antar hari ini</h2>
+      <ul id="slot-daftar"></ul>
+    </section>
+
+    <section aria-labelledby="tentang-judul">
+      <h2 id="tentang-judul">Tentang Antar Pasar</h2>
+      <p>Antar Pasar adalah kurir untuk belanjaan Pasar Pagi Cilacap. Pesanan
+        diantar oleh kurir pasar ke alamat di Cilacap kota dan sekitarnya,
+        maksimal 15 km dari pasar. Situs ini adalah situs demo untuk
+        Open Agentic Web Challenge.</p>
+      <p>Belanja dulu di <a id="pasar-link" href="https://naplex666.github.io/pasar-pagi/">Pasar Pagi</a>.</p>
+    </section>
+    <section id="assistant" class="assistant" aria-labelledby="assistant-heading">
+      <h2 id="assistant-heading">Tanya Antar Pasar</h2>
+      <p>Tanya ongkir berdasarkan jarak dan slot jam antar — asisten menjawab dari data tarif hari ini.</p>
+      <p class="assistant-note">Pesan Anda dan data halaman ini dikirim ke penyedia LLM yang Anda pilih di pengaturan di bawah.</p>
+      <p id="assistant-status" role="status">Menghubungkan asisten… Jika pesan ini tetap ada, asisten gagal dimuat. Anda tetap bisa memakai halaman ini langsung.</p>
+      <div id="agent-app">
+        <div data-ns-slot="header"></div>
+        <div class="assistant-panels">
+          <div data-ns-slot="chat"></div>
+          <div data-ns-slot="agents"></div>
+        </div>
+        <div data-ns-slot="settings"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Antar Pasar &middot; Jam antar 07:00&ndash;18:00 WIB setiap hari.</p>
+      <p class="muted">Situs demo untuk Open Agentic Web Challenge. Tarif contoh, bukan tarif sungguhan.
+        Tidak ada pembayaran dan tidak ada pengiriman sungguhan.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
